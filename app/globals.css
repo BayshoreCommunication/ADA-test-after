@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Sansation font (Google Fonts) */
+@import url("https://fonts.googleapis.com/css2?family=Sansation:wght@400;700&display=swap");
+
+/* Global Scroll Reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 600ms ease, transform 600ms ease;
+  will-change: opacity, transform;
+}
+
+.reveal-up {
+  transform: translateY(16px);
+}
+
+.reveal-down {
+  transform: translateY(-16px);
+}
+
+.reveal-left {
+  transform: translateX(24px);
+}
+
+.reveal-right {
+  transform: translateX(-24px);
+}
+
+.reveal-fade {
+  transform: none;
+}
+
+.revealed {
+  opacity: 1;
+  transform: none;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.animate-slideDown {
+  animation: slideDown 0.7s ease forwards;
+}
+:root {
+  --font-heading: var(--font-heading);
+  --font-body: var(--font-body);
+}
+
+/* Body default */
+body {
+  font-family: var(--font-body);
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+}
