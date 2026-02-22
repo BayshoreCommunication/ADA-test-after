@@ -1,6 +1,7 @@
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 import { Providers } from "./providers";
 import localFont from "next/font/local";
@@ -41,6 +42,9 @@ export default function RootLayout({
       className={`${tanAngleton.variable} ${canvaSans.variable}`}
     >
       <body>
+        <Script id="acsb-widget" strategy="afterInteractive">
+          {`(function(){ var s = document.createElement('script'); var h = document.querySelector('head') || document.body; s.src = 'https://acsbapp.com/apps/app/dist/js/app.js'; s.async = true; s.onload = function(){ acsbJS.init(); }; h.appendChild(s); })();`}
+        </Script>
         <Providers>
           <Navbar />
           <main>{children}</main>
