@@ -42,9 +42,20 @@ export default function RootLayout({
       className={`${tanAngleton.variable} ${canvaSans.variable}`}
     >
       <body>
-        <Script id="acsb-widget" strategy="afterInteractive">
-          {`(function(){ var s = document.createElement('script'); var h = document.querySelector('head') || document.body; s.src = 'https://acsbapp.com/apps/app/dist/js/app.js'; s.async = true; s.onload = function(){ acsbJS.init(); }; h.appendChild(s); })();`}
-        </Script>
+        <Script
+          id="userway-widget"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `(function(d){
+              var s = d.createElement("script");
+              s.setAttribute("data-position", "3");
+              s.setAttribute("data-account", "X8pxTcBMba");
+              s.setAttribute("src", "https://cdn.userway.org/widget.js");
+              (d.body || d.head).appendChild(s);
+            })(document);`,
+          }}
+        />
+
         <Providers>
           <Navbar />
           <main>{children}</main>
